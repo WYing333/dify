@@ -171,7 +171,7 @@ const PluginPage = ({ plugins, marketplace }: PluginPageProps) => {
       )}
     >
       {isPluginsTab && (
-        <div className="sticky top-0 z-10 flex min-h-[60px] items-center gap-1 self-stretch bg-components-panel-bg px-12 pt-4 pb-2">
+        <div className="sticky top-0 z-10 flex min-h-15 items-center gap-1 self-stretch bg-components-panel-bg px-12 pt-4 pb-2">
           <div className="flex w-full items-center justify-between">
             <div className="flex-1">
               <TabSlider
@@ -215,7 +215,9 @@ const PluginPage = ({ plugins, marketplace }: PluginPageProps) => {
                       </Button>
                     }
                   />
-                  <TooltipContent>{t(($) => $['privilege.title'], { ns: 'plugin' })}</TooltipContent>
+                  <TooltipContent>
+                    {t(($) => $['privilege.title'], { ns: 'plugin' })}
+                  </TooltipContent>
                 </Tooltip>
               )}
             </div>

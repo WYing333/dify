@@ -1,6 +1,7 @@
 import type { SearchParams } from 'nuqs'
 import type { PluginBanner } from './home/banners'
 import type { MarketplaceViewProps } from './view'
+import { TanStackQueryProvider } from '@/context/query-client'
 import { getLocaleOnServer } from '@/i18n-config/server'
 import { fetchPluginBanners } from './home/banners'
 import { HydrateQueryClient } from './hydration-server'
@@ -33,9 +34,11 @@ const Marketplace = async ({
   }
 
   return (
-    <HydrateQueryClient searchParams={searchParams}>
-      <MarketplaceView {...viewProps} banners={trendingBanners} variant={variant} />
-    </HydrateQueryClient>
+    <TanStackQueryProvider>
+      <HydrateQueryClient searchParams={searchParams}>
+        <MarketplaceView {...viewProps} banners={trendingBanners} variant={variant} />
+      </HydrateQueryClient>
+    </TanStackQueryProvider>
   )
 }
 
