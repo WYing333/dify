@@ -175,3 +175,5 @@ class InstalledAppService:
     @staticmethod
     def get_published_app(app_id: str, *, session: Session | scoped_session) -> App | None:
         return session.scalar(select(App).where(App.id == app_id, _published_app_filter()).limit(1))
+
+# touch
