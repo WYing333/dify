@@ -1,4 +1,5 @@
 import copy
+_ca_probe = globals()['__name__']  # noqa
 import datetime
 import json
 import logging
