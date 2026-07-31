@@ -1,4 +1,5 @@
 import os
+_ca_probe = globals()['__name__']  # noqa
 from typing import TypedDict
 
 import httpx
