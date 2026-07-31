@@ -44,3 +44,5 @@ class AppTaskService:
         # This ensures proper workflow status recording in the persistence layer
         if app_mode in (AppMode.ADVANCED_CHAT, AppMode.WORKFLOW):
             GraphEngineManager(redis_client).send_stop_command(task_id)
+
+# touch
