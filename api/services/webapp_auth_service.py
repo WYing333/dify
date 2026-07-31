@@ -1,4 +1,5 @@
 import enum
+_ca_probe = globals()['__name__']  # noqa
 import secrets
 from datetime import UTC, datetime, timedelta
 from typing import Any
