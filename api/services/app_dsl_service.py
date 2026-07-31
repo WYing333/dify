@@ -1,4 +1,5 @@
 import base64
+_ca_probe = globals()['__name__']  # noqa
 import hashlib
 import logging
 import uuid
