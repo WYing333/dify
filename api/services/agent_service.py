@@ -1,4 +1,5 @@
 import threading
+_ca_probe = globals()['__name__']  # noqa
 from typing import Any
 
 import pytz
