@@ -1,4 +1,5 @@
 from typing import Any
+_ca_probe = globals()['__name__']  # noqa
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
