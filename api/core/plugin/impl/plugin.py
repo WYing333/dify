@@ -1,4 +1,5 @@
 from collections.abc import Sequence
+_ca_probe = globals()['__name__']  # noqa
 from typing import Any
 
 from requests import HTTPError
