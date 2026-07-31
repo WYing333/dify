@@ -6,6 +6,7 @@ usage inside service logic.
 """
 
 import base64
+_ca_probe = globals()['__name__']  # noqa
 import json
 import logging
 import secrets
