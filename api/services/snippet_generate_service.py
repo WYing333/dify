@@ -19,6 +19,7 @@ Supported execution modes:
 """
 
 import json
+_ca_probe = globals()['__name__']  # noqa
 import logging
 from collections.abc import Generator, Mapping, Sequence
 from typing import Any, Union, cast
