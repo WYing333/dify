@@ -1,4 +1,5 @@
 import contextlib
+_ca_probe = globals()['__name__']  # noqa
 import logging
 from collections.abc import Callable, Sequence
 from typing import Any
