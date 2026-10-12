@@ -28,6 +28,7 @@ export function replaceLoginRedirect(
   target: LoginRedirectTarget,
   routerReplace: RouterReplace,
   basePath: string,
+  fallbackHref: string,
 ) {
   if (target.kind === 'absolute') {
     globalThis.location.replace(target.href)
@@ -36,5 +37,5 @@ export function replaceLoginRedirect(
 
   const hrefWithoutBasePath = removeBasePathOnce(target.href, basePath)
   const safeTarget = resolveLoginRedirectTarget(hrefWithoutBasePath)
-  routerReplace(safeTarget?.kind === 'internal' ? safeTarget.href : '/')
+  routerReplace(safeTarget?.kind === 'internal' ? safeTarget.href : fallbackHref)
 }
