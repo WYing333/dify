@@ -13,8 +13,8 @@ const triggerDownload = ({ url, fileName, rel, target }: DownloadUrlOptions) => 
   if (fileName) anchor.download = fileName
   if (rel) anchor.rel = rel
   if (target) anchor.target = target
-  anchor.style.display = 'none'
-  document.body.appendChild(anchor)
+  anchor.hidden = true
+  document.body.append(anchor)
   anchor.click()
   anchor.remove()
 }
