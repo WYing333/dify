@@ -30,6 +30,10 @@ export const downloadUrl = ({
 
 export const downloadBlob = ({ data, fileName }: { data: Blob; fileName: string }) => {
   const url = window.URL.createObjectURL(data)
-  triggerDownload({ url, fileName, rel: 'noopener noreferrer' })
-  window.URL.revokeObjectURL(url)
+  try {
+    triggerDownload({ url, fileName, rel: 'noopener noreferrer' })
+  }
+  finally {
+    window.URL.revokeObjectURL(url)
+  }
 }
