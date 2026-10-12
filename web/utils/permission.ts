@@ -65,7 +65,7 @@ type DatasetACLCapabilities = {
   canAccessConfig: boolean
 }
 
-export const hasPermission = (
+export const hasAnyPermission = (
   permissionKeys: readonly PermissionKey[] | null | undefined,
   permissionKeySet: PermissionKey | PermissionKey[],
 ) => {
@@ -98,7 +98,7 @@ const shouldGrantMaintainerPermissions = (
 
   return (
     options.currentUserId === options.resourceMaintainer &&
-    hasPermission(options.workspacePermissionKeys, createPermissionKey)
+    hasAnyPermission(options.workspacePermissionKeys, createPermissionKey)
   )
 }
 
@@ -106,7 +106,7 @@ const hasResourcePermission = (
   permissionKeys: readonly PermissionKey[] | null | undefined,
   permissionKey: PermissionKey,
   hasMaintainerPermissions: boolean,
-) => hasMaintainerPermissions || hasPermission(permissionKeys, permissionKey)
+) => hasMaintainerPermissions || hasAnyPermission(permissionKeys, permissionKey)
 
 export const getAppACLCapabilities = (
   permissionKeys: readonly PermissionKey[] | null | undefined,
